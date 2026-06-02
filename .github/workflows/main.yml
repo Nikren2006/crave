@@ -16,6 +16,7 @@ on:
         default: 'LineageOS 21.0'
         type: choice
         options:
+          - 'CrDroid 12.10'
           - 'LineageOS 20.0'
           - 'LineageOS 21.0'
           - 'LineageOS 22.1'
@@ -31,26 +32,26 @@ on:
       BUILD_DIFFERENT_ROM:
         description: "Command to initialize a different 'repo' project:"
         required: false
-        default: "echo 'Build Starting!'"
-      REMOVALS:
-        description: "Folders to be removed before syncing:"
-        required: false
+        default: "repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs"
       LOCAL_MANIFEST:
         description: "Personal local manifest [repository or raw]:"
         required: true
-        default: 'https://github.com/sounddrill31/local_manifests_oxygen'
+        default: 'https://github.com/ТВОЙ_НИК/crave_local_manifest'  # ← твой репозиторий
+
       LOCAL_MANIFEST_BRANCH:
         description: "Personal local manifest's branch:"
         required: false
-        default: 'lineage-21-qpr3'
+        default: 'main'  # ← или ветка, где лежит roomservice.xml
+
       DEVICE_NAME:
         description: "Device's codename:"
         required: true
-        default: "oxygen"
+        default: "apollo"
+
       PRODUCT_NAME:
         description: "Product to build:"
         required: true
-        default: "oxygen"
+        default: "lineage_apollo"  # или "crDroid_apollo"
       BUILD_COMMAND:
         description: 'Command to be used for compiling:'
         required: true
@@ -98,6 +99,11 @@ jobs:
           export PROJECTID="73"
           export REPO_INIT="repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 --depth=1"
 
+        ;;
+        "CrDroid 12.10")
+          export PROJECTFOLDER="/crave-devspaces/crDroid16"
+          export PROJECTID="???"  # Оставь как есть, Crave подставит
+          export REPO_INIT="repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --depth=1"
         ;;
         "DerpFest 14.0")
           export PROJECTFOLDER="/crave-devspaces/DerpFest14"

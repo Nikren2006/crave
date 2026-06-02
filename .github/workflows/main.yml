@@ -36,7 +36,7 @@ on:
       LOCAL_MANIFEST:
         description: "Personal local manifest [repository or raw]:"
         required: true
-        default: 'https://github.com/ТВОЙ_НИК/crave_local_manifest'  # ← твой репозиторий
+        default: 'https://github.com/Nikren2006/apollo-manifest-a16'  # ← твой репозиторий
 
       LOCAL_MANIFEST_BRANCH:
         description: "Personal local manifest's branch:"

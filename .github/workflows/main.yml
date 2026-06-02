@@ -101,7 +101,7 @@ jobs:
 
         ;;
         "CrDroid 12.10")
-          export PROJECTFOLDER="/crave-devspaces/crDroid16"
+          export PROJECTFOLDER="/crave-devspaces/Lineage22"
           export PROJECTID="72"  # Оставь как есть, Crave подставит
           export REPO_INIT="repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --depth=1"
         ;;
